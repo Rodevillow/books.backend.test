@@ -5,12 +5,5 @@
       "src": "./dist/src/main.js",
       "use": "@vercel/node"
     }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/dist/src/router/booksRouter.js"
-    }
-  ],
-  "outputDirectory": "build"
+  ]
 }
