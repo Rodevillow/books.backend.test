@@ -2,9 +2,13 @@ import { NextFunction, Request, Response } from 'express'
 import prisma from '../db/client'
 import ErrorHandler from '../utils/ErrorHandler'
 
-export const getAllBooks = async (_: Request, res: Response) => {
-    const books = await prisma.book.findMany()
-    return res.status(200).json({ books })
+export const getAllBooks = async (_: Request, res: Response, next) => {
+    try {
+        const books = await prisma.book.findMany()
+        return res.status(200).json({ books })
+    } catch (e) {
+        next(e);
+    }
 }
 
 export const getUniqueBook = async (
