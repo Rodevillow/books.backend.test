@@ -7,7 +7,7 @@
         "node": "18.x"
     },
     "scripts": {
-        "dev": "nodemon --watch 'src/**/*.{ts,json}' --exec 'ts-node' src/main.ts",
+        "dev": "nodemon --watch 'src/**/*.{ts,json}' --exec 'ts-node' src/index.ts",
         "build": "npm install && tsc && prisma generate",
         "start": "node dist/src/main.js",
         "reset": "ts-node prisma-client.ts"
